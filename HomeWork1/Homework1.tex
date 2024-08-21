@@ -34,27 +34,62 @@
 \subsection*{Problem 3}
 \begin{enumerate}[a).]
     \item {
+    False.
+    We define $A_n = \{n, n+1, n+2, \dots\}$ for all $n \in \mathbb{N}$. 
+    We see that $A_1 \supseteq A_2 \supseteq A_3 \dots$, however $\bigcap_{n=1}^{\infty}A_n = \emptyset$, thus is not infinite.
+    the proof below would establish that $\bigcap_{n=1}^{\infty}A_n$ is indeed empty. 
 
+    \begin{proof}
+        We will use a proof by contradiction. 
+        Assume $ a \in \bigcap_{n=1}^{\infty}A_n$, we know that $a \in A_n$ for all $n \in \mathbb{N}$.
+        But wee see that $A_{a+1} = \{a+1, a+2, a+3, \dots\}$, and that $a \notin A_{a+1}$. 
+        Thus we have arrived at our contradiction.
+    \end{proof}
     }
     \item {
-
+    True.
     }
 
 \end{enumerate}
 
 \subsection*{Problem 8}
 
+\begin{enumerate}[a).]
+    \item {
+        Example: $f: \mathbb{N} \rightarrow \mathbb{N}$, $f(x) = x+1$.
+        It is not surjective since no element of the domain maps to 1 in the co-domain. 
+    }
+    \item {
+    Example: $f: \mathbb{N} \rightarrow \mathbb{N}$, $f(x) = \lceil  \log{x} \rceil$
+    }
+    \item {
+    Example: $f: \mathbb{N} \rightarrow \mathbb{Z}$, $f(x) = (-1)^{x}{\lceil \frac{x}{2}\rceil}$
+    }
+\end{enumerate}
+
 \subsection*{Problem 10}
 \begin{enumerate}[a).]
     \item {
-
+        False.
+        If $a = b$, we see that $a = b < b + \epsilon$ for some $\epsilon > 0$. 
+        However, we see that $a \nless b$, and thus the statement is false. 
     }
 
 \end{enumerate}
 
 \begin{enumerate}[c).]
     \item {
-
+    True. 
+    \begin{proof}
+        We will first establish the forward direction of the proof. 
+        We know that $b < b + \epsilon$ for all $\epsilon > 0$, and so $a \le b < b + \epsilon$. 
+        Consequently, $a < b + \epsilon$. 
+        Now we will show the converse of this statement using contradiction. 
+        That is, we assume $a < b + \epsilon$ for all $\epsilon > 0$ and $a>b$. 
+        Because $a > b$, we know that there exists some $r \in \mathbb{R}$ such that $r = a - b$. 
+        We see that $a > b + \frac{r}{2}$ as $\frac{r}{2} < r$.
+        We now arrived at our contraction because we know that $a < b + \epsilon$ for all $\epsilon > 0$.
+    \end{proof}
     }
 \end{enumerate}
 
@@ -66,9 +101,50 @@
 \textit{Problems: 2, 6, 8}
 
 \subsection*{Problem 2}
+\begin{enumerate}[a).]
+    \item {
+
+    }
+    \item {
+
+    }
+    \item {
+
+    }
+\end{enumerate}
 
 \subsection*{Problem 6}
 
+\begin{enumerate}[a).]
+    \item {
+    
+    }
+    \item {
+
+    }
+    \item {
+
+    }
+    \item{
+
+    }
+\end{enumerate}
+
 \subsection*{Problem 8}
+\begin{enumerate}[a).]
+    \item {
+
+    }
+    \item {
+
+    }
+    \item {
+
+    }
+    \item{
+
+    }
+\end{enumerate}
+
 
 \end{document}
