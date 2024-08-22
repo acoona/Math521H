@@ -37,7 +37,7 @@
     False.
     We define $A_n = \{n, n+1, n+2, \dots\}$ for all $n \in \mathbb{N}$. 
     We see that $A_1 \supseteq A_2 \supseteq A_3 \dots$, however $\bigcap_{n=1}^{\infty}A_n = \emptyset$, thus is not infinite.
-    the proof below would establish that $\bigcap_{n=1}^{\infty}A_n$ is indeed empty. 
+    The proof below would establish that $\bigcap_{n=1}^{\infty}A_n$ is indeed empty. 
 
     \begin{proof}
         We will use a proof by contradiction. 
@@ -103,13 +103,13 @@
 \subsection*{Problem 2}
 \begin{enumerate}[a).]
     \item {
-
+    A = \{12\}, inf B = 12 = sup B
     }
     \item {
-
+    It is not possible, as in a finite set, the largest element will be the supremum. 
     }
     \item {
-
+    $A = \{ x \; \vert \; \pi < x < 5 \}$
     }
 \end{enumerate}
 
@@ -117,13 +117,32 @@
 
 \begin{enumerate}[a).]
     \item {
-    
+        \begin{proof}
+            If $c \in A + B$, we know that $c = a + b$ for some $a \in A$ and $b \in B$. 
+            Because $s = supA \ge a$ for all $a \in A$, and $t = supB \ge b$ for all $b \in B$, therefore $s+t \ge c$ for all $c \in A + B$. 
+            And by definition, $s+t$ is an uppper bound for $A + B$. 
+        \end{proof}
     }
     \item {
+        \begin{proof}
+            We will use a proof by contradiction. 
+            We assume that for all $u$ that is an upper bound for $A + B$, $a \in A$, and $t > u - a$. 
+            Thus we see $t+a > u$ for all upper bound $u$.
+            We know that $t + a \le t + s$ since $s = supA \ge a$, and from (a). we know that $s+t$ is an upper bound. 
+            We let $u = s + t + 1$, we know that $u > s+t \ge t + a$. 
+            However, we assumed that $u < a+t$, hence we have arrived at our contradiction.
+        \end{proof}
 
     }
     \item {
-
+        \begin{proof}
+            We let $u = sup(A+B)$.
+            From (b). we know that $t \le u -a$ and $s \le u -b$. 
+            Therefore $t+s \le 2u - a - b$, and so $t+s + (a+b) \le 2u$.
+            We see $t + s + (a + b) \le t + s + u \le 2u$.
+            Consequently, $s + t \le u$, and establishing the fact that $Sup(A) + Sup(B) = Sup(A+B)$. 
+            
+        \end{proof}
     }
     \item{
 
@@ -133,16 +152,20 @@
 \subsection*{Problem 8}
 \begin{enumerate}[a).]
     \item {
-
+        suprema: 1\\
+        infima: 0
     }
     \item {
-
+        suprema: 1\\
+        infima: -1 
     }
     \item {
-
+        suprema: $\frac{1}{3}$\\
+        infima: $\frac{1}{4}$
     }
-    \item{
-
+    \item {
+        suprema: 1\\
+        infima: 0
     }
 \end{enumerate}
 
