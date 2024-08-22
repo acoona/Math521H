@@ -141,11 +141,16 @@
             Therefore $t+s \le 2u - a - b$, and so $t+s + (a+b) \le 2u$.
             We see $t + s + (a + b) \le t + s + u \le 2u$.
             Consequently, $s + t \le u$, and establishing the fact that $Sup(A) + Sup(B) = Sup(A+B)$. 
-            
         \end{proof}
     }
     \item{
-
+        \begin{proof}
+            We know that $s - \epsilon < a$ for some $a \in A$ and $\epsilon > 0$, and $t - \epsilon < b$ for some $b \in B$ and $\epsilon > 0$.
+            Thus, we see $s + t - 2\epsilon < a + b$, and further more that $(a+b) \in A + B$.
+            We let $\epsilon_1 \equiv 2\epsilon$, and $c \equiv a + b$. 
+            And we see that $s+t - \epsilon_1 < c$ for all $c \in A + B$ and $\epsilon_1 > 0$.
+            Consequently, by Lemma 1.3.8, this is equivalent to $s + t = sup(A+B)$.
+        \end{proof}
     }
 \end{enumerate}
 
