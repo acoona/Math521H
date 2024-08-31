@@ -22,7 +22,8 @@
 
 \newtheorem*{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
-\newtheorem{Case}{Case}[]
+\newtheorem{case}{Case}[]
+\newtheorem{claim}{Claim}[]
 
 
 \setlength{\parindent}{0px}
@@ -137,11 +138,32 @@
     We know that there exists $r \in \mathbb{Q}$ such that $c < r < b$ because of the rational density theorem. 
     We have $$a < c < x < b$$
     However, we can see $x \in [a,b] \cap \mathbb{Q}$, and so $c$ is not a upper bound. 
-    Consequently, 
+    Consequently, we have arrived at our contradiction, and know that for any upper bound $d$, $b\le d$. 
+    Thus we have shown that $b$ is the least upper bound.
     
 \end{proof}
 
 \subsection*{Problem 5}
+\begin{proof}
+    We know any $c \in \mathbb{R}$ can be expressed as $c = a - \sqrt{2}$, where $a \in \mathbb{R}$. 
+    And for any $d \in \mathbb{R}$, $d = b - \sqrt{2}$ for some $b \in \mathbb{R}$. 
+    In addtion, we know that for some $s \in \mathbb{Q}$, if $t = s - \sqrt{2}$, then $t \in \mathbb{I}$. 
+    We let $ c < d$, and we want to show that
+    \begin{align*}
+        c &< t < d\\
+        \implies a - \sqrt{2} &< s - \sqrt{2} < b - \sqrt{2}\\
+        \implies a &< s < b 
+    \end{align*}
+    That is, for some $a,b \in \mathbb{R}$, $a < b$, there exists $s \in \mathbb{Q}$ such that $a < s < b$ (this is theorem 1.4.3 of the text book). 
+    Because of the Archimedean property, we know that there exists $n \in \mathbb{N}$ such that $\frac{1}{n} < b - a$. 
+    And because 
+
+    
+
+    
+    
+\end{proof}
+
 \subsection*{Problem 8}
 \begin{enumerate}[a).]
     \item {
