@@ -156,11 +156,17 @@
     \end{align*}
     That is, for some $a,b \in \mathbb{R}$, $a < b$, there exists $s \in \mathbb{Q}$ such that $a < s < b$ (this is theorem 1.4.3 of the text book). 
     Because of the Archimedean property, we know that there exists $n \in \mathbb{N}$ such that $\frac{1}{n} < b - a$. 
-    And because 
-
-    
-
-    
+    And because $s \in \mathbb{Q}$, we let $s = \frac{m}{n}$ for some $m \in \mathbb{Z}$. 
+    We pick the smallest $m$ so that $m-1 \le an < m$.
+    We can easily see that $a < \frac{m}{n}$, thus completing half of our proof. 
+    Because $\frac{1}{n} < b - a$, we see $b > \frac{1}{n} + a$. We also see that $m - 1 \le an$, so $\frac{m}{n} \le a + \frac{1}{n}$. 
+    Therefore
+    \begin{align*}
+        \frac{m}{n} &\le a + \frac{1}{n} < b\\
+        \implies s &< b
+    \end{align*}
+    Consequently, we see that for some $a,b \in \mathbb{R}$, $a < b$, there exists $s \in \mathbb{Q}$ such that $a < s < b$. 
+    And thus $a - \sqrt{2} < s - \sqrt{2} < b - \sqrt{2}$ is also true, meaning there exists an irrational number between any two real number. 
     
 \end{proof}
 
