@@ -122,7 +122,24 @@ And $h(x) = f(g(x))$ is a bejective function(composition of bijective functions 
 \section*{Section 2.2}
 \textit{Problems: 1, 2b}
 \subsection*{Problem 1}
+$a_n = (1,1,1,1,1,1, \dots)$, we see that $|a_n - 0| < 2$.
+Because there exists $\epsilon > 0$ ($\epsilon = 2$ in this case) such that for all $N \in \mathbb{N}$, $n \ge N$, thus $a_n$ verconges to $0$. 
+We know that the sequence $a_n = (1,-1,1,-1, \dots, (-1)^{n})$ diverges, but we see that $|a_n - 0| < 2$, thus it also verconges to 0.
+
+
 \subsection*{Problem 2}
+\begin{proof}
+    For all $\epsilon > 0$, we choose $N$ such that $N > \frac{2}{\epsilon}$.
+    For $n \ge N$, we see 
+    \begin{align*}
+        n &> \frac{2}{\epsilon} \\
+        \frac{2}{n} &< \epsilon \\
+        \frac{2n^2}{n^3} &< \epsilon \\
+        \frac{2n^2}{n^3 + 3} &< \frac{2n^2}{n^3} < \epsilon \\
+        \left| {\frac{2n^2}{n^3 + 3} - 0} \right| &< \epsilon
+    \end{align*}
+    Consequently, we see that $\lim_{n \rightarrow \infty} = 0$. 
+\end{proof}
 
 
 \end{document}
