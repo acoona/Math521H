@@ -22,7 +22,7 @@
 \newtheorem*{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{case}{Case}[]
-\newtheorem{claim}{Claim}[]
+\newtheorem*{claim}{Claim}
 
 
 \setlength{\parindent}{0px}
@@ -106,14 +106,34 @@ And $h(x) = f(g(x))$ is a bejective function(composition of bijective functions 
     }
     \item {
         We let $M$ be an uncountable set, and let $I_m$ for $m \in M$ to be the collection of uncountable disjoint intervals.
-        Namely, $I_m = (a_m, b_m)$. From the theorem of the density of the rational number which was proven in chapter 1, we know that between any two $a,b \in \mathbb{R}$, there exists a $c \in \mathbb{Q}$ such that $a < c < b$. 
-        We can thus rename this set as $I_c$ for some $c \in \mathbb{Q}$. 
+        Namely, $I_m = (a_m, b_m)$. From the theorem of the density of the rational number which was proven in chapter 1, we know that between any two $a,b \in \mathbb{R}$, there exists a $c \in \mathbb{Q}$ such that $a < c < b$, therefore it is surjective.
         The sole thing left to be established is the injectivity between $c \in \mathbb{Q}$ and $(a_m, b_m)$. 
-        We know that 
+        We know that the interval is disjoint, thus the $c \in \mathbb{Q}$ cannot be an element of the other intervals, thus injectivity.
+        We can thus rename this set as $I_c$ for some $c \in \mathbb{Q}$. 
 
     }
 \end{enumerate}
+
+
 \subsection*{Problem 10}
+\begin{enumerate}[a).]
+    \item {
+        \begin{proof}
+            We will use a proof by contradiction. 
+            Assume not, that is $C \subseteq [0,1]$ is uncountable and that for all $a \in (0,1)$, $C \cap [a,1]$ is countable. 
+            We see that $\frac{1}{n} \in (0,1)$ for all $n \ge 2$, $n \in \mathbb{N}$. 
+            Let $I_n = [\frac{1}{n},1]$, and let $A_n$ be the set consisted of the elements of $C\cap I_n$. 
+            We know that $$\cup^{\infty}_{n = 2}C \cap I_n = C\; \cup^{\infty}_{n = 2}I_n$$ is countable.
+            We see $\lim_{n \rightarrow \infty} \frac{1}{n} = 0$, thus $\cup^{\infty}_{n = 2} I_n= (0,1]$
+            And so $$A_n = \{C\cup (0,1]\}$$ is countable.
+            And we know that the union of two countable set is countable, thus $$A_n\cup{\{0\}} = \{C\cup (0,1] \cup{0}\} = {C \cup [0,1] = C}$$ is countable.
+            Conseqeuntly, we have arrived at our contradiction because we know that $C$ is uncountable, and thus our original statement is true. 
+            That is, if $C \subseteq [0,1]$ is uncountable, there exists $a \in (0,1)$, such that $C \cap[a,1]$ is countable.
+        \end{proof}
+
+    }
+\end{enumerate}
+
 
 
 \vspace*{1cm}
@@ -123,8 +143,26 @@ And $h(x) = f(g(x))$ is a bejective function(composition of bijective functions 
 \textit{Problems: 1, 2b}
 \subsection*{Problem 1}
 $a_n = (1,1,1,1,1,1, \dots)$, we see that $|a_n - 0| < 2$.
-Because there exists $\epsilon > 0$ ($\epsilon = 2$ in this case) such that for all $N \in \mathbb{N}$, $n \ge N$, thus $a_n$ verconges to $0$. 
-We know that the sequence $a_n = (1,-1,1,-1, \dots, (-1)^{n})$ diverges, but we see that $|a_n - 0| < 2$, thus it also verconges to 0.
+Because there exists $\epsilon > 0$ ($\epsilon = 2$ in this case) such that for all $N \in \mathbb{N}$, $n \ge N$,  $a_n$ verconges to $0$, thus it is vercongent. 
+We know that the sequence $a_n = (1,-1,1,-1, \dots, (-1)^{n})$ diverges, but we see that $|a_n - 0| < 2$, thus it also verconges to 0, conseqeuntly, this is an example of a divergent sequence that is vercongent. 
+\begin{claim}
+    A sequence $a_n$ that verconges to $a$ verconges to $b$ for any $b \in \mathbb{R}$. 
+\end{claim}
+
+\begin{proof}
+    We know that $b  = a + c$ for some $c \in \mathbb{R}$.
+    we see 
+    \begin{align*}
+        | a_n - b| = | a_n - (a + c)| \le |a_n - a| + |-c| = | a_n - a| + |c|
+    \end{align*}
+    We know that $|a_n - a| < \epsilon_1$ for some $\epsilon_1 > 0$.
+    Conseqeuntly, $|a_n - b| < \epsilon_1 + |c|$, for some $ \epsilon_1 + |c| > 0 $, $a_n$ verconges to $b$.
+\end{proof}
+
+We see that a sequence can verconge to two different values. 
+This strange definition seems to describe the idea of bounded of a sequence that is shifted. 
+
+
 
 
 \subsection*{Problem 2}
