@@ -80,14 +80,61 @@
 \subsection*{Problem 1}
 \begin{enumerate}[a).]
     \item {
-    }
-    \item {
+        \begin{proof}
+        We can show that the sequence is Monotone convergent by showing that it is bounded and monotone.
+        We will use induction to show that the sequence is monotone. 
+        We see that $x_1 = 3$ and $x_2 = \frac{1}{4 - 3} = 1$, and $3 > 1$. 
+        We assume that $x_k > x_{k-1}$ and we need to show that $x_{k+1} > x_{k}$. 
+        We see 
+        \begin{align*}
+            x_{n-1} &< x_{n}\\
+            \implies - x_{n-1} &> -x_{n}\\
+            \implies4 - x_{n-1} &> 4 -x_{n}\\
+            \implies \frac{1}{4 - x_{n-1}} &< \frac{1}{4 -x_{n}}\\
+            \implies x_n &< x_{x+1}
+        \end{align*}
+        We have thus showed that $(x_n)$ is decreasing for all $n \in \mathbb{N}$. 
+        Now we have to show that $(x_n)$ is bounded.
+        Because all terms are strictly decreasing, therefore no term can be greater than $x_1 = 3$. 
+        Notice that $4 - x_n > 0$ if $x_n < 4$, and we know that $x_1 = 3 < 4$, so conseqeuntly, $\frac{1}{4 - x_n} > 0$ for all $n \in \mathbb{N}$ (can be easily proven using induction). 
+        conseqeuntly, $4 > x_n > 0$ and we see that $|x_n| < 4$ for all $n \in \mathbb{N}$. 
+        Then, by the Montone convergent theorem, we know that the sequence defined by $x_1 = 3$ and $x_{n+1} = \frac{1}{4 - x_n}$ is convergent. 
+        \end{proof}
 
     }
     \item {
+        \begin{proof}
+        We know that $\lim_{} x_n$ exists, let it be $x$. 
+        Therefore, we know that for all $\epsilon > 0$, there exists a $N \in \mathbb{N}$, such that $ n \ge N \implies |x_n - x| < \epsilon$. 
+        We know that $n+1 > n \ge N$, so conseqeuntly, $|x_{n+1} - x| < \epsilon$. 
+        And thus, $\lim_{} x_{n+1}$ exists and equals to the same value.
+        \end{proof}
 
+    }
+    \item {
+        We see 
+        \begin{align*}
+            x_{n+1} &= \frac{1}{4 - x_n}\\
+            \lim_{}x_{n+1} &= \lim_{} \left( \frac{1}{4 - x_n} \right)\\
+            \lim_{}x_{n+1} &=  \frac{\lim_{}(1)}{\lim_{}(4 - x_n)} \\
+            \lim_{}x_{n+1} &=  \frac{\lim_{}(1)}{\lim_{}(4 - x_n)} \\
+        \end{align*}
+            Because $\lim_{}x_n = \lim_{}x_{n+1}$, we let it be $x$. 
+            We have 
+        \begin{align*}
+            x &= \frac{1}{4-x}\\
+            x(4-x) &= 1\\
+            4x-x^2 &= 1\\
+            x^2 -4x +1 &= 0\\
+            x^2 -4x +4 &= 3\\
+            (x-2)^2 &= 3\\
+            x &= 2 \pm \sqrt{3}\\
+        \end{align*}
+        We know that $x_n < 3$ and is decreasing, therefore $\lim_{}x_n = 2 - \sqrt{3}$. 
     }
 \end{enumerate}
+
+
 \subsection*{Problem 2}
 \begin{enumerate}[a).]
     \item {
