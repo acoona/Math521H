@@ -138,6 +138,8 @@
 \subsection*{Problem 2}
 \begin{enumerate}[a).]
     \item {
+        We see that we can express $(y_n)$ explicitly as $(x_n) = (1,2,1,2,1,\dots)$, and it does not converge.
+        Therefore this argument is wrong because both $y_{n+1}$ and $y_n$ does not converge to a value.
 
     }
 \end{enumerate}
@@ -149,9 +151,22 @@
 \subsection*{Problem 1}
 \begin{enumerate}[a).]
     \item {
-
+    The request is impossible, as we know that the subsequence of the subsequence is also a subsequence of the original sequence. 
+    And because the subsequence is bounded, therefore via the Bolzano-Weierstrass Theorem, we know that the subsequence contains a convergent subsequence, therefore the orignal sequence also contains that convergent subsequence.
     }
     \item {
+    By definition, we know that that a sequence is a funciton whose domain is the natural numbers.
+    Thus we let 
+        $$ 
+        f(x) = \left\{ 
+            \begin{array}{ll} 
+                \frac{1}{n} \quad \text{n is odd}, n \in \mathbb{N}\\
+                1 - \frac{1}{n} \quad \text{n is even} n \in \mathbb{N} \\
+            \end{array} \right.
+        $$
+    We see $a_n = (1,0,\frac{1}{3}, \frac{3}{4}, \dots)$.
+    The subsequence of $a_{n_k}$ where $n_k = 2k - 1$ for $k \in \mathbb{N}$ converges to 0, and 
+    The subsequence of $a_{n_k}$ where $n_k = 2k $ for $k \in \mathbb{N}$ converges to 1, and 
 
     }
 \end{enumerate}
