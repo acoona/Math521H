@@ -35,7 +35,7 @@
     \item {
     \begin{proof}
         Because for all $\epsilon > 0$, $|x_n| < \epsilon$ and $\epsilon^2 > 0$, we let $|x_n| < \epsilon^2$.
-        We see that $x_n < \epsilon^2$ since $x_n \ge 0$. And consequently $\sqrt{x_n} < \epsilon$. 
+        We see that $x_n < \epsilon^2$ since $x_n \ge 0$. And consequently $\sqrt{x_n} < \epsilon$ for all $\epsilon > 0$. 
     \end{proof}
     }
 \end{enumerate}
@@ -52,20 +52,20 @@
             (backwards direction) We want to show that $(x_n)$ and $(y_n)$ are both convergent with $\lim{}x_n = \lim{}y_n$.
             We see that $(x_n) = (z_1, z_3, z_5, \dots, z_{2n-1})$ and $(y_n) = (z_2, z_4, z_6, \dots, z_{2n})$. 
             We know for all $\epsilon > 0$, there exists $N \in \mathbb{N}$ such that $n \ge N \implies |z_n - c| < \epsilon$.
-            We know that $x_n = z_{2n-1} \ge z_{n}$, conseqeuntly, $|x_n - c| < \epsilon$. 
-            Same reasoning, $y_n = z_{2n} > z_n$, and thus $|y_n - c| < \epsilon$. 
+            We know that $2n-1 \ge n$ and $x = z_{2n-1}$, conseqeuntly, $|x_n - c| < \epsilon$. 
+            Same reasoning, ${2n} > n$, and thus $|y_n - c| < \epsilon$. 
         \end{proof}
 
 \subsection*{Problem 7}
 \begin{enumerate}[a).]
     \item {
     Let $(x_n) = (1, -1, 1, \dots, (-1)^{n-1})$ for $n \in \mathbb{N}$ and $(y_n) = (-1, 1, -1, \dots. (-1)^{n})$.
-    We see that $x_n$ and $y_n$ both converges, and $(x_n + y_n) = (0,0,0,\dots)$ diverges. 
+    We see that $x_n$ and $y_n$ both diverges, and $(x_n + y_n) = (0,0,0,\dots)$ converges. 
     }
 
     \item {
     Because $(x_n)$ and $(x_n + y_n)$ converges. 
-    We know that $(-x_n)$ converges, and thus $(x_n + y_n) + (-x_n) = (y_n)$ converges.
+    We see that $(-x_n)$ converges, and thus $(x_n + y_n) + (-x_n) = (y_n)$ converges.
     However, it was given that $(y_n)$ diverges, consequently, the request is impossible by referencing the proper theorems. 
     }
 \end{enumerate}
@@ -84,14 +84,14 @@
         We can show that the sequence is Monotone convergent by showing that it is bounded and monotone.
         We will use induction to show that the sequence is monotone. 
         We see that $x_1 = 3$ and $x_2 = \frac{1}{4 - 3} = 1$, and $3 > 1$. 
-        We assume that $x_k > x_{k-1}$ and we need to show that $x_{k+1} > x_{k}$. 
+        We assume that $x_k < x_{k-1}$ and we need to show that $x_{k+1} < x_{k}$. 
         We see 
         \begin{align*}
-            x_{n-1} &< x_{n}\\
-            \implies - x_{n-1} &> -x_{n}\\
-            \implies4 - x_{n-1} &> 4 -x_{n}\\
-            \implies \frac{1}{4 - x_{n-1}} &< \frac{1}{4 -x_{n}}\\
-            \implies x_n &< x_{x+1}
+            x_{k-1} &> x_{k}\\
+            \implies - x_{k-1} &< -x_{k}\\
+            \implies4 - x_{k-1} &< 4 -x_{k}\\
+            \implies \frac{1}{4 - x_{k-1}} &> \frac{1}{4 -x_{k}}\\
+            \implies x_k &> x_{k+1}
         \end{align*}
         We have thus showed that $(x_n)$ is decreasing for all $n \in \mathbb{N}$. 
         Now we have to show that $(x_n)$ is bounded.
@@ -161,13 +161,13 @@
         f(x) = \left\{ 
             \begin{array}{ll} 
                 \frac{1}{n} \quad \text{n is odd}, n \in \mathbb{N}\\
-                1 - \frac{1}{n} \quad \text{n is even} n \in \mathbb{N} \\
+                1 - \frac{1}{n} \quad \text{n is even}, n \in \mathbb{N} \\
             \end{array} \right.
         $$
-    We see $a_n = (1,0,\frac{1}{3}, \frac{3}{4}, \dots)$.
-    The subsequence of $a_{n_k}$ where $n_k = 2k - 1$ for $k \in \mathbb{N}$ converges to 0, and 
-    The subsequence of $a_{n_k}$ where $n_k = 2k $ for $k \in \mathbb{N}$ converges to 1, and 
-
+    We see $a_n = (1,\frac{1}{2},\frac{1}{3}, \frac{3}{4}, \dots)$.
+    the Subsequence, namly $a_{n_k}$ where $n_k = 2k - 1$ for $k \in \mathbb{N}$ converges to 0..
+    The subsequence of $a_{n_k}$ where $n_k = 2k $ for $k \in \mathbb{N}$ converges to 1. 
+    And addition, we know that the original sequence diverges due to the Divergance criteria. 
     }
 \end{enumerate}
 
