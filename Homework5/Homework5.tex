@@ -128,29 +128,81 @@
 \section*{Section 3.2}
 \textit{Problems: 2, 4a, 8ab, 11a}
 \subsection*{Problem 2}
+\begin{enumerate}[a).]
+    \item {
+        limit points: \\
+        For set $A$: $-1$ and $1$. \\
+        For set $B$: $[0,1]$. 
+    }
+    \item {
+        Both sets are not closed, as they both don't contain all of their limit points. 
+        We see that set $A$ doesn't contain $-1$, which is a limit point. 
+        And we see that $\frac{\sqrt{2}}{2} \in [0,1]$, yet $\frac{\sqrt{2}}{2} \notin B$. 
+        And we see that both $A$ and $B$ are not open, because we know that irrationals are dense, and so irrationals are contained in any $V_{\epsilon}(x)$ for $A$. 
+        consequently, causing $V_{\epsilon} (x)$ to not be a subset of $A$. 
+        The reasoning for $B$ is the same.
+    }
+    \item {
+        For set $A$, we see that all points except for $1$ is an isolated point.
+        Because we know that for any other arbirary point, $a_n$, $\exists \epsilon > 0$ such that $V_{\epsilon}(a) \cap A = \emptyset$, namely, let $\epsilon = \frac{1}{n} - \frac{1}{n + 2}$.
+        We see that $B$ does not contain any limit point, as the rationals are also dense, hence in any $\epsilon$ interval, there exists rationals. 
+
+    }
+    \item {
+        We see that $\bar{A} = A \cup {-1}$, and we see that $\bar{B} = \{x \in \mathbb{R} : 0 \le x \le 1\}$
+
+    }
+\end{enumerate}
+
 
 
 \subsection*{Problem 4}
 \begin{enumerate}[a).]
     \item {
+        \begin{proof}
+            We see that if $s = a$ for some $a \in A$, then we see that $s \in A \subseteq \bar{A}$, thus we are done.
+            And for $s \ne a$ for some $a \in A$, we know that for all $\epsilon > 0$, $s - \epsilon < a_1 < s < s + \epsilon$ for some $a_1 \in A$. 
+            We see that for all $\epsilon > 0$, $V_{\epsilon}(x) \cap A \ne \emptyset$ or equal to $x$ (since $x \notin A$). 
+            Consequently, so $x$ is a limit point of $A$, $x \in L$, and thus $x \in \bar{A}$. 
 
+            
+            
+        \end{proof}
     }
 \end{enumerate}
 
 \subsection*{Problem 8}
+We know that the only sets that are both open and close are $\mathbb{R}$ and $\emptyset$. 
+
 \begin{enumerate}[a).]
     \item {
-
+        We know that the closure of any set, in this case $ A \cup B$, is closed. 
+        Thus, definitly closed
     }
-    \item {
 
+    \item {
+        We know that $A - B$ is equivalent to $A \cap B^\complement$.
+        And because $B$ is closed, so we know that $B^\complement$ is open. 
+        The interseciton of an finite number of open sets is open. 
+        Thus, we see that $A - B$ is open. 
     }
 \end{enumerate}
 
 \subsection*{Problem 11}
 \begin{enumerate}[a).]
     \item {
-
+        \begin{proof}
+            We will show that $\overline{A \cup B} \subseteq \bar{A} \cup \bar{B}$ and $\overline{A \cup B} \supseteq \bar{A} \cup \bar{B}$. 
+            We know that $\overline{A} = A \cup L_A$, and same for $B$. 
+            So we see that $A \cup B \subseteq \overline{A} \cup \overline{B}$. 
+            And it is easy to see from definition that $\overline{A \cup B} \subseteq \overline{\overline{A} \cup \overline{B}}$ ($\forall \epsilon > 0$, $V_{\epsilon}(x) \cap (A \cup B) \ne \{x\}$ and not empty $\implies$ $V_{\epsilon}(x) \cap (\overline{A} \cup \overline{B}) \ne \{x\}$ and not empty). 
+            We know that the union of two close set is a closed set, thus $\overline{A} \cup \overline{B}$ is a close set, and so $\overline{\overline{A} \cup \overline{B}} = \overline{A} \cup \overline{B}$.
+            Thus, $\overline{A \cup B} \subseteq \bar{A} \cup \bar{B}$. 
+            To show that the other way is true, we see that $\overline{A} \subseteq \overline{A \cup B}$, and $\overline{B} \subseteq \overline{A \cup B}$ (can be easily seen through definition of limit point, like above).
+            Thus, $\overline{A} \cup \overline{B} \subseteq \overline{A \cup B}$.  
+            And finally we have shown that they are equivalent. 
+            
+        \end{proof}
     }
 \end{enumerate}
 
