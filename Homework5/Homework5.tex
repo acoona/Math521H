@@ -66,7 +66,7 @@
         And we see that $\forall n \ge N$, $|a_{n}| \ge M$. 
         consequently, we see that all the subsequences of $(a_n)$ is unbounded (when $k \ge N$, $n_k \ge k \ge N$). 
         However, we know that there exists a Cauchy subsequence, hence it is convergent, hence it is bounded. 
-        And we know that all subsequenes are unbounded, therefore we have arrived at our contradiction.
+        But we know that all subsequenes are unbounded, therefore we have arrived at our contradiction.
     }
     \item {
         $(a_n) = (1, 0, 2, 0, 4, 0, 5, \dots )$ has subsequence $(0,0,0, \dots)$ which is Cauchy. 
@@ -83,7 +83,9 @@
 \begin{enumerate}[a).]
     \item {
         $\sum x_n = 1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n}$ diverges\\
+
         $\sum y_n = 1 + \frac{1}{2} + \frac{1}{3} + \dots + \frac{1}{n}$ diverges\\
+
         We see that 
         $$\sum x_ny_n = 1 + \frac{1}{4} + \frac{1}{9} + \dots + \frac{1}{n^2}$$\\
         which converges(in the form $\frac{1}{n^p}$, where $p > 1$).
@@ -111,7 +113,7 @@
 \begin{enumerate}[a).]
     \item {
         \begin{proof}
-            Because $\lim (n a_n) = l$, we know that $l > 0$ (The proof is trivial employing conradiction and the definition is limit, assume $l < 0$ and set $\epsilon = \frac{|l|}{2}$, show $a$ is both positive and negative).
+            Because $\lim (n a_n) = l$, we know that $l > 0$ (The proof is trivial employing conradiction and the definition is limit, assume $l < 0$ and set $\epsilon = \frac{|l|}{2}$, show $a$ is negative, hence contradiction).
             $\forall \epsilon > 0$, $N \in \mathbb{N}$, $ n \ge N \implies |n(a_n) - l | < \epsilon$. 
             We can set $\epsilon = \frac{l}{2}$, we see that $\frac{l}{2} < n(a_n) < \frac{3l}{2}$. 
             And we see that $\frac{l}{2n} < a_n$. 
@@ -137,7 +139,7 @@
     \item {
         Both sets are not closed, as they both don't contain all of their limit points. 
         We see that set $A$ doesn't contain $-1$, which is a limit point. 
-        And we see that $\frac{\sqrt{2}}{2} \in [0,1]$, yet $\frac{\sqrt{2}}{2} \notin B$. 
+        And we see that for all $\epsilon > 0$, $V_e(\frac{\sqrt{2}}{2}) \cap B \ne \emptyset$ or $\frac{\sqrt{2}}{2}$ (rationals are dense), thus $\frac{\sqrt{2}}{2}$ is a limit point not contained. 
         And we see that both $A$ and $B$ are not open, because we know that irrationals are dense, and so irrationals are contained in any $V_{\epsilon}(x)$ for $A$. 
         consequently, causing $V_{\epsilon} (x)$ to not be a subset of $A$. 
         The reasoning for $B$ is the same.
@@ -149,7 +151,7 @@
 
     }
     \item {
-        We see that $\bar{A} = A \cup {-1}$, and we see that $\bar{B} = \{x \in \mathbb{R} : 0 \le x \le 1\}$
+        We see that $\bar{A} = A \cup \{-1\}$, and we see that $\bar{B} = \{x \in \mathbb{R} : 0 \le x \le 1\}$
 
     }
 \end{enumerate}
@@ -162,11 +164,8 @@
         \begin{proof}
             We see that if $s = a$ for some $a \in A$, then we see that $s \in A \subseteq \bar{A}$, thus we are done.
             And for $s \ne a$ for some $a \in A$, we know that for all $\epsilon > 0$, $s - \epsilon < a_1 < s < s + \epsilon$ for some $a_1 \in A$. 
-            We see that for all $\epsilon > 0$, $V_{\epsilon}(x) \cap A \ne \emptyset$ or equal to $x$ (since $x \notin A$). 
-            Consequently, so $x$ is a limit point of $A$, $x \in L$, and thus $x \in \bar{A}$. 
-
-            
-            
+            We see that for all $\epsilon > 0$, $V_{\epsilon}(s) \cap A \ne \emptyset$ or equal to $s$ (since $s \notin A$). 
+            Consequently, $s$ is a limit point of $A$, $s \in L$, and thus $s \in \bar{A}$. 
         \end{proof}
     }
 \end{enumerate}
@@ -192,9 +191,9 @@ We know that the only sets that are both open and close are $\mathbb{R}$ and $\e
 \begin{enumerate}[a).]
     \item {
         \begin{proof}
-            We will show that $\overline{A \cup B} \subseteq \bar{A} \cup \bar{B}$ and $\overline{A \cup B} \supseteq \bar{A} \cup \bar{B}$. 
+            We will show that $\overline{A \cup B} \subseteq \bar{A} \cup \bar{B}$ and $\overline{A \cup B} \supseteq \bar{A} \cup \bar{B}$, thus they are equivalent. 
             We know that $\overline{A} = A \cup L_A$, and same for $B$. 
-            So we see that $A \cup B \subseteq \overline{A} \cup \overline{B}$. 
+            So we see that $A \cup B \subseteq \overline{A} \cup \overline{B}$ (unions of sets are commutative). 
             And it is easy to see from definition that $\overline{A \cup B} \subseteq \overline{\overline{A} \cup \overline{B}}$ ($\forall \epsilon > 0$, $V_{\epsilon}(x) \cap (A \cup B) \ne \{x\}$ and not empty $\implies$ $V_{\epsilon}(x) \cap (\overline{A} \cup \overline{B}) \ne \{x\}$ and not empty). 
             We know that the union of two close set is a closed set, thus $\overline{A} \cup \overline{B}$ is a close set, and so $\overline{\overline{A} \cup \overline{B}} = \overline{A} \cup \overline{B}$.
             Thus, $\overline{A \cup B} \subseteq \bar{A} \cup \bar{B}$. 
