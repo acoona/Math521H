@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}			% Use this package to include images
+\usepackage{amsmath}			% A library of many standard math expressions
+\usepackage[margin=1in]{geometry}% Sets 1in margins. 
+\usepackage{fancyhdr}			% Creates headers and footers
+\usepackage{enumerate}          %These two package give custom labels to a list
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Creates the header and footer. You can adjust the look and feel of these here.
+\pagestyle{fancy}
+\fancyhead[l]{Xiaoming Cao}
+\fancyhead[c]{MATH521H Homework\#6}
+\fancyhead[r]{\today}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt} %Creates a horizontal line underneath the header
+\setlength{\headheight}{15pt} %Sets enough space for the header
+
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{case}{Case}[]
+\newtheorem*{claim}{Claim}
+
+
+\setlength{\parindent}{0px}
+\begin{document} %The writing for your homework should all come after this. 
+
+\section*{Section 3.3}
+\textit{Problems: 1, 4, 5}
+\subsection*{Problem 1}
+\begin{proof}
+    Because $K$ is compact, we know that it is closed and bounded. 
+    We see that $K$ is bounded(both bounded above and below) and non-empty, so it contains its supremum and infimum. 
+    For $\sup K$, the supremum of the set $K$, we know that there exists $k$ such that $\sup K - \epsilon < k < \sup K$. 
+    And from which we can construct a sequence $(k_n)$ contained in $K$ that converge to $\sup K$.
+    If $\lim_{}(k_n) \in K$, then we are done, so assuming that $\lim_{}(k_n) \notin K$, we will use contradiction.
+    We know that $(k_n)$ is contained in $K$, converges, and $k_n \neq \lim_{}(k_n)$ for all $n \in \mathbb{N}$, we see that it is thus a limit point.
+    We know that $K$ is closed, so it contains all its limit points, thus $\lim_{}(k_n) \in K$.
+    Contradiction. 
+    And thus we see that $\sup K \in K$. 
+    The same arguemnt can be made for the infimum of $K$.
+\end{proof}
+
+
+\subsection*{Problem 4}
+\begin{enumerate}[a).]
+    \item {
+        $K \cap F$ is definitely close and definitly compact. 
+        We know that $K$ is compact, therefore it is closed and bounded, and we know that the intersection of two closed sets is closed, thus $K \cap F$ is closed.
+        For any $x \in K \cap F$, we know that $x \in K$, and we know that $K$ is bounded, so $K \cap F$ is bounded. 
+        And because it is closed and bounded, thus $K \cap F$ is compact.
+    }
+    \setcounter{enumi}{2}
+    \item {
+        It is not definitely closed or compact.
+        We let $K = [0,1]$, we see it is compact, we let $F = \{1\}$, we see it is closed. 
+        However, we see that $K - F = [0,1)$, and it is not closed since it does not contain the limit point $1$, and consequenctly, also not bounded. 
+    }
+\end{enumerate}
+\subsection*{Problem 5}
+\begin{enumerate}[a).]
+    \item {
+        True.
+        \begin{proof}
+            We know that the aribitrary intersection of closed set is closed. 
+            And we also know that if one element is bounded, its intersection with other sets is also bounded. 
+            And so the arbitrary intersection fo compact sets is both bounded and closed, thus compact.
+        \end{proof}
+    }
+    \item {
+        False. \\
+
+        We will produce a counter-example. 
+        We see that the set of $\{ n \}$, $n \in \mathbb{N}$ is closed and bounded, thus compact. 
+        And we see that the arbitrary union of compact sets $\cup_{n=1}^{\infty}{n}$ is the set of natural numbers, and thus it is unbounded, so not compact.
+    }
+\end{enumerate}
+
+\end{document}
