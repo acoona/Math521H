@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}			% Use this package to include images
+\usepackage{amsmath}			% A library of many standard math expressions
+\usepackage[margin=1in]{geometry}% Sets 1in margins. 
+\usepackage{fancyhdr}			% Creates headers and footers
+\usepackage{enumerate}          %These two package give custom labels to a list
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Creates the header and footer. You can adjust the look and feel of these here.
+\pagestyle{fancy}
+\fancyhead[l]{Xiaoming Cao}
+\fancyhead[c]{MATH521H Homework\#7}
+\fancyhead[r]{\today}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt} %Creates a horizontal line underneath the header
+\setlength{\headheight}{15pt} %Sets enough space for the header
+
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{case}{Case}[]
+\newtheorem*{claim}{Claim}
+
+
+\setlength{\parindent}{0px}
+\begin{document} %The writing for your homework should all come after this. 
+
+\section*{Section 4.2}
+\textit{Problems: 5, 6}
+\subsection*{Problem 5}
+\begin{enumerate}[a).]
+    \item {
+        $\lim_{x \rightarrow 2}(3x + 4) = 10$
+        \begin{proof}
+            For any $\epsilon > 0$, we let $\delta = \frac{\epsilon}{3}$, we see that 
+            \begin{align*}
+                |x - 2| &< \frac{\epsilon}{3} \\
+                \implies |3x - 6| &< \epsilon \\
+                \implies |(3x+4) - 10| &< \epsilon 
+            \end{align*}
+            Consequently, we are done. 
+        \end{proof}
+    }
+    \item {
+        $\lim_{x \rightarrow 0} x^3 = 0 $
+        \begin{proof}
+            For any $\epsilon > 0$, we let $\delta = \sqrt[3]{\epsilon}$, we see that
+            \begin{align*}
+                |x - 0| &< \sqrt[3]{\epsilon} \\
+                \implies |x|^3 &< \epsilon \\
+                \implies |x^3 - 0| &< \epsilon
+            \end{align*}
+            Consequently, we are done. 
+        \end{proof}
+    }
+\end{enumerate}
+
+\subsection*{Problem 6}
+\begin{enumerate}[a).]
+    \item {
+        \begin{proof}
+            True. Let the function be $\lim_{x \rightarrow c} f(x) = L$. 
+            We see that for $\delta_s$ such that $0 < \delta_s < \delta$, we have $|x - c| < \delta_s \implies |x -c| < \delta$.
+            And we already know that the orginal $\delta$ is a suitable response to the particular $\epsilon$ challenge, thus $\delta_s$ also works (since $|x - c| < \delta \implies |f(x) - L| < \epsilon$). 
+        \end{proof}
+    }
+    \item {
+        False.\\
+        Consider the piece-wise function as counter-example:
+        $$ 
+        f(x) = \left\{ 
+            \begin{array}{ll} 
+                x \quad   x \ne 0\\
+                0 \quad   x = 0\\
+            \end{array} \right.
+        $$
+        We see that $\lim_{x \rightarrow 0} f(x) = 1$, but $1 \ne f(a) = 0$. 
+    }
+\end{enumerate}
+
+
+\section*{Section 4.3}
+\textit{Problems: 1, 4, 6}
+\subsection*{Problem 1}
+\begin{enumerate}[a).]
+    \item {
+    }
+    \item {
+    }
+\end{enumerate}
+
+\subsection*{Problem 4}
+\begin{enumerate}[a).]
+    \item {
+    }
+\end{enumerate}
+
+\subsection*{Problem 6}
+\begin{enumerate}[a).]
+    \item {
+    }
+    \item {
+    }
+\end{enumerate}
+
+\section*{Section 4.4}
+\textit{Problems: 1}
+\subsection*{Problem 1}
+\begin{enumerate}[a).]
+    \item {
+    }
+    \item {
+    }
+    \item {
+    }
+\end{enumerate}
+
+\end{document}
