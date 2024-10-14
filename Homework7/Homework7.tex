@@ -74,10 +74,10 @@
         f(x) = \left\{ 
             \begin{array}{ll} 
                 x \quad   x \ne 0\\
-                0 \quad   x = 0\\
+                1 \quad   x = 0\\
             \end{array} \right.
         $$
-        We see that $\lim_{x \rightarrow 0} f(x) = 1$, but $1 \ne f(a) = 0$. 
+        We see that $\lim_{x \rightarrow 0} f(x) = 0$, but $0 \ne f(a) = 1$. 
     }
 \end{enumerate}
 
@@ -87,22 +87,68 @@
 \subsection*{Problem 1}
 \begin{enumerate}[a).]
     \item {
+        Let $\epsilon > 0$ be arbitrary, we let $\delta = \epsilon^3$, we see that 
+        \begin{align*}
+            |x - 0| &< \epsilon^3\\
+            \implies \sqrt[3]{|x|} &< \epsilon\\
+            \implies |\sqrt[3]{x} - 0| &< \epsilon\\
+        \end{align*}
+        Consequently, we are done. 
     }
     \item {
+        Given any $\epsilon > 0$, we let $\delta = \min(2|c|, \epsilon|\sqrt[3]{c^2}|)$, we see that  $0 < (-2|c| - c)^2$, so $0 < \sqrt[3]{(-2|c| - c)^2} < \sqrt[3]{x^2} $,, and it is easy to see that $c(-2|c| - c) < (-2|c| - c)^2$, for all $c \ne 0$.
+        Thus we have
+        \begin{align*}
+            |x - c| < \epsilon |\sqrt[3]{c^2}| \\
+            \implies |\sqrt[3]{x} - \sqrt[3]{c}| = \frac{|x-c|}{|\sqrt[3]{x^2} + \sqrt[3]{cx} +\sqrt[3]{c^2}|} &< \frac{|x-c|}{|\sqrt[3]{(-2|c| - c)^2} + \sqrt[3]{c(|-2|c| - c)} +\sqrt[3]{c^2}|} < \frac{|x-c|}{|\sqrt[3]{c^2}| } < \epsilon
+        \end{align*}
+        Consequently, we are done.
     }
 \end{enumerate}
 
 \subsection*{Problem 4}
 \begin{enumerate}[a).]
     \item {
+        Example: \\
+        $$ 
+        f(x) = 0
+        $$
+        $$ 
+        g(x) = \left\{ 
+            \begin{array}{ll} 
+                x \quad   x \ne 0\\
+                1 \quad   x = 0\\
+            \end{array} \right.
+        $$
+        We see that $\lim_{x\rightarrow 0}g(x) = 0$, but $\lim_{x\rightarrow 0} g(f(x))= 1$. 
+
     }
 \end{enumerate}
 
 \subsection*{Problem 6}
 \begin{enumerate}[a).]
     \item {
+        We see that if 
+        $$
+        f(x) = \left\{
+            \begin{array}{ll}
+                1 \quad x \ne 0 \\
+                0 \quad x = 0\\
+            \end{array} \right.
+        $$
+        $$
+        g(x) = \left\{
+            \begin{array}{ll}
+                1 \quad x = 0 \\
+                0 \quad x \ne 0\\
+            \end{array} \right.
+        $$
+        $f(x)g(x) = 0$, a constant function, hence continous at $0$. 
+        And $f(x) + g(x) = 1$, a constant function, hence continous at $0$. 
     }
     \item {
+        The request is impossible. 
+        We see that $f(x)$ and $f(x) + g(x)$ are continuous at 0. Thus we see that $g(x) = f(x) + g(x) - f(x)$ is continuous, hence a contraditiction ($g(x)$ is assumed to be not continous). 
     }
 \end{enumerate}
 
@@ -111,10 +157,29 @@
 \subsection*{Problem 1}
 \begin{enumerate}[a).]
     \item {
+        \begin{proof}
+        We know that $f(x) = x$ is continuous, and we know that the production of continous funtion is continous, 
+        so $g(x) = x^3 = f(x)f(x)f(x)$ is continuous.
+        \end{proof}
     }
     \item {
+        We let $(x_n) = n$ for $n \in \mathbb{N}$ and $(y_n) = n + \frac{1}{n}$ for all $n \in \mathbb{N}$, we see that $|y_n - x_n| = |\frac{1}{n}|$, and thus $|y_n - x_n| \rightarrow 0$. 
+        We let $\epsilon_0 = 0.5$, we see that $|f(y_n) - f(x_n)| = |n^3 + 3n^2(\frac{1}{n}) + 3n(\frac{1}{n})^2 + (\frac{1}{n})^3 - n^3| > |3n| > 0.5$. 
+        Consequently, it fits the sequential criterion for the absence of uniform convergence. 
     }
     \item {
+        \begin{proof}
+        We left $A$ be a bounded subset of the $\mathbb{R}$, we see that for all $ |a| \in A$, $a < M$  for some $M >0$, $M \in \mathbb{R}$. 
+        Notice, for any $x, y \in A$, $x < M$ and $y < M$. 
+        Given any $\epsilon > 0$, we let $\delta = \frac{\epsilon}{3M^2}$, we see
+        \begin{align*}
+            |x-y| &< \frac{\epsilon}{3M^2} \\
+            3M^2|x-y| &< \epsilon \\
+            3M^2|x-y| &< \epsilon \\
+            |x^3 - y^3|= |(x-y)(x^3 + xy + y^2)|&<|(x-y) (M^2 + (M)(M) + M^2)| < \epsilon \\
+        \end{align*}
+        Consequently, we are done. 
+        \end{proof}
     }
 \end{enumerate}
 
