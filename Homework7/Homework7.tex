@@ -96,13 +96,34 @@
         Consequently, we are done. 
     }
     \item {
-        Given any $\epsilon > 0$, we let $\delta = \min(2|c|, \epsilon|\sqrt[3]{c^2}|)$, we see that  $0 < (-2|c| - c)^2$, so $0 < \sqrt[3]{(-2|c| - c)^2} < \sqrt[3]{x^2} $,, and it is easy to see that $c(-2|c| - c) < (-2|c| - c)^2$, for all $c \ne 0$.
-        Thus we have
-        \begin{align*}
-            |x - c| < \epsilon |\sqrt[3]{c^2}| \\
-            \implies |\sqrt[3]{x} - \sqrt[3]{c}| = \frac{|x-c|}{|\sqrt[3]{x^2} + \sqrt[3]{cx} +\sqrt[3]{c^2}|} &< \frac{|x-c|}{|\sqrt[3]{(-2|c| - c)^2} + \sqrt[3]{c(|-2|c| - c)} +\sqrt[3]{c^2}|} < \frac{|x-c|}{|\sqrt[3]{c^2}| } < \epsilon
-        \end{align*}
-        Consequently, we are done.
+        \begin{claim}
+            If $|x-c|<|c|$, then $c >0 \implies x>0$, and $c<0 \implies x < 0$.
+        \end{claim}
+        \begin{proof}
+            If $c > 0$, we see 
+            \begin{align*}
+                -|c| + c < x < |c| + c \\
+                0 < x < 2c
+            \end{align*}
+            Consequently, $x>0$. And if $c < 0$,
+            \begin{align*}
+                -|c| + c < x < |c| + c \\
+                2c < x < 0
+            \end{align*}
+            So $x < 0$.
+        \end{proof}
+
+        \begin{proof}
+            Given $\epsilon > 0$, we let $\delta = \min\{ |c|, \epsilon|\sqrt[3]{c^2}|\}$.
+            We see that 
+            \begin{align*}
+                |x - c| &< \epsilon|\sqrt[3]{c^2}| \\
+                \implies \frac{|x - \epsilon|}{|\sqrt[3]{c^2}|} &< \epsilon\\
+                \implies \frac{x - c}{\sqrt[3]{x^2} + \sqrt[3]{xc} + \sqrt[3]{x^2}} &< \frac{|x - \epsilon|}{|\sqrt[3]{c^2}|} < \epsilon \\
+                \implies |\sqrt[3]{x} - \sqrt[3]{c}| < \epsilon
+            \end{align*}
+            Consequently, we are done. 
+        \end{proof}
     }
 \end{enumerate}
 
@@ -158,8 +179,18 @@
 \begin{enumerate}[a).]
     \item {
         \begin{proof}
-        We know that $f(x) = x$ is continuous, and we know that the production of continous funtion is continous, 
-        so $g(x) = x^3 = f(x)f(x)f(x)$ is continuous.
+        We know that $f(x) = x$ is continuous, and we know that the product of continous funtion is continous, 
+        so $g(x) = x^3 = f(x)f(x)f(x)$ is continuous. \\
+        \end{proof}
+        We can produce an alternative proof employing the definition of convergence.  
+        \begin{proof}
+            Given $\epsilon > 0$, we let $\delta = \min\{ 1, \frac{\epsilon}{|(|c| + 1)^2| + |(|c| + 1)c| + c^2}\}$, thus we are able to bound $x$, $c-1 < x < c + 1 \le |c| + 1 $.
+            We see that 
+            \begin{align*}
+                |x-c| < \frac{\epsilon}{|(|c| + 1)^2| + |(|c| + 1)c| + c^2} \\
+                \implies ({|(|c| + 1)^2| + |(|c| + 1)c| + c^2})|x-c| < \epsilon \\
+                \implies |(x^2 + xc + c^2)(x-c)| = |x^3 - c^3| < \epsilon \\
+            \end{align*}
         \end{proof}
     }
     \item {
@@ -176,7 +207,7 @@
             |x-y| &< \frac{\epsilon}{3M^2} \\
             3M^2|x-y| &< \epsilon \\
             3M^2|x-y| &< \epsilon \\
-            |x^3 - y^3|= |(x-y)(x^3 + xy + y^2)|&<|(x-y) (M^2 + (M)(M) + M^2)| < \epsilon \\
+            |x^3 - y^3|= |(x-y)(x^3 + xy + y^2)|&<|(x-y) (M^2 + (M)(M) + M^2)| < 3M^2|x-y| < \epsilon \\
         \end{align*}
         Consequently, we are done. 
         \end{proof}
