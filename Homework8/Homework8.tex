@@ -39,7 +39,7 @@
     \item {
         Impossible. 
         We know that a closed interval is a compact set (since it is closed and bounded), and we know that a continous function perserves compact sets. 
-        Thus we know that the image of the function is compacted. 
+        Thus we know that the image of the function is compact. 
         However, we know that an open interval is not compact, thus it cannot possibly be our range. 
     }
     \item {
@@ -56,11 +56,12 @@
         And observe that the domain is $(-1, 1 + \frac{\pi}{2})$ with a range of $[0, \infty)$. 
     }
     \item {
-        We see that between any $a,b \in \mathbb{Q}$, there exists $c \in \mathbb{I}$ such that $a< c < b$ due to the density the irrationals. 
+        We see that between any $a,b \in \mathbb{Q}$, $a \ne b$, without lost of generality assume $a < b$. 
+        There exists $c \in \mathbb{I}$ such that $a< c < b$ due to the density the irrationals. 
         For some $x, y \in A$, where $A$ is the open interval which the function is defined on.
         And note that $[x,y] \subseteq A$.
         Without lost of generality, assume $f(x) < f(y)$, we know there exists some $f(x) < L < f(y)$ where $L \in \mathbb{I}$. 
-        And because $f(x)$ is continous, thus by the mean value theorem, we know that there exists $c \in (x,y)$ such that $f(x) = L$. 
+        And because $f(x)$ is continous, thus by the intermediate value theorem, we know that there exists $c \in (x,y)$ such that $f(x) = L$. 
         Consequently, the range is not equal to $\mathbb{Q}$. 
     }
 \end{enumerate}
@@ -70,12 +71,13 @@
     \item {
         \begin{proof}
             We will let $g(x) \coloneq f(x) - f(x + \frac{1}{2})$. 
-            And we see that $g(x)$ is contnous on $[0,\frac{1}{2}]$ since it is the sum of two functions continous on $[0,\frac{1}{2}]$.
+            And we see that $g(x)$ is continous on $[0,\frac{1}{2}]$ since it is the sum of two functions continous on $[0,\frac{1}{2}]$.
             And observe that $g(0) = f(0) - f(\frac{1}{2})$ and $g(\frac{1}{2}) = f(\frac{1}{2}) - f(1) = -(f(0) - f(\frac{1}{2})) $. 
             We may consider three cases: $f(\frac{1}{2}) = f(0)$, $f(\frac{1}{2}) > f(0)$, and $f(\frac{1}{2}) < f(0)$. 
-            If $f(0) = f(\frac{1}{2})$, we are done. However, if $f(0) < f(\frac{1}{2})$ or $f(0) > f(\frac{1}{2})$, we can exploit the mean value theorem. 
+            If $f(0) = f(\frac{1}{2})$, we are done (let $x = 0$, $y = \frac{1}{2}$). 
+            However, if $f(0) < f(\frac{1}{2})$ or $f(0) > f(\frac{1}{2})$, we can exploit the mean value theorem. 
             Without lost of generality, assume $f(0) > f(\frac{1}{2})$. 
-            We know that $g(0) > 0$ and $g(\frac{1}{2}) = - g(0) < 0$, thus $g(\frac{1}{2}) < 0 < g(0)$. 
+            We know then that $g(0) > 0$ and $g(\frac{1}{2}) = - g(0) < 0$, thus $g(\frac{1}{2}) < 0 < g(0)$. 
             We know that $g(x)$ is continuous on $[0,\frac{1}{2}]$, consequently, through the intermediate value theorem, we know there exists a $c \in (0,\frac{1}{2})$ such that $g(c) = 0$.
             Which means $0 = f(c) - f(c+\frac{1}{2})$, and finally $f(c) = f(c+\frac{1}{2})$. Note $|c - (c+\frac{1}{2})| = \frac{1}{2}$.
             
@@ -170,7 +172,7 @@
     }
     \item {
         False. 
-        The counter example is the modified version of $x^2\sin(\frac{1}{x})$, that is $f(x) = x^2\sin(\frac{1}{x}) + \frac{1}{8}$. 
+        The counter example is the modified version of $x^2\sin(\frac{1}{x})$, that is $f(x) = x^2\sin(\frac{1}{x}) + \frac{1}{8}x$. 
         Notice that at $x = 0$, $f'(0) = \frac{1}{8} > 0$. 
         However, at all $x \ne 0$, we see that $f'(x) = -\cos(\frac{1}{x}) + 2x\sin(\frac{1}{x}) + \frac{1}{8}$. 
         We define a sequence $(x_n) = \frac{1}{2\pi n}$ for $n \in \mathbb{N}$.
@@ -190,7 +192,8 @@
 We will use an indirect proof. 
 We assume for contradiction that $f'(x) \ne 0$ on $A$, and it is not the case that $f(x)$ is one-to-one on $A$. 
 That is, we know there exist $a, b \in A$ such that $a \ne b$, but $f(x) = f(b)$. 
-With out lost of generality, we take interval $[a,b]$, because $a, b \in A$, we know $[a,b] \subseteq A$, and thus this implies that $f(x)$ differentiable on $[a,b]$, which means it is also continuous. 
+With out lost of generality, assume $a < b$. 
+We take interval $[a,b]$, because $a, b \in A$, we know $[a,b] \subseteq A$, and thus this implies that $f(x)$ differentiable on $[a,b]$, which means it is also continuous. 
 Using Rolle's Theorem, we know there exists a point $c \in (a,b)$ where $f'(c) = 0$ since $f(a) = f(b)$. 
 And $c \in (a,b)$ imples $c \in A$.
 Consequently, we have arrived at our contradiction because we assumed that $f'(x) \ne 0$ on $A$. 
