@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}			% Use this package to include images
+\usepackage{amsmath}			% A library of many standard math expressions
+\usepackage[margin=1in]{geometry}% Sets 1in margins. 
+\usepackage{fancyhdr}			% Creates headers and footers
+\usepackage{enumerate}          %These two package give custom labels to a list
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% Creates the header and footer. You can adjust the look and feel of these here.
+\pagestyle{fancy}
+\fancyhead[l]{Xiaoming Cao}
+\fancyhead[c]{MATH521H Homework\#8}
+\fancyhead[r]{\today}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt} %Creates a horizontal line underneath the header
+\setlength{\headheight}{15pt} %Sets enough space for the header
+
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{case}{Case}[]
+\newtheorem*{claim}{Claim}
+
+
+\setlength{\parindent}{0px}
+\begin{document} %The writing for your homework should all come after this. 
+
+\section*{Section 4.5}
+\textit{Problems: 2, 6}
+\subsection*{Problem 2}
+\begin{enumerate}[a).]
+    \item {
+        We take $f(x) = sin(x)$ on the domain of $(-4\pi, 4 \pi)$, which is an open interval, and we see that the range is $[-1, 1]$, which is a closed interval.
+    }
+    \item {
+        Impossible. 
+        We know that a closed interval is a compact set (since it is closed and bounded), and we know that a continous function perserves compact sets. 
+        Thus we know that the image of the function is compacted. 
+        However, we know that an open interval is not compact, thus it cannot possibly be our range. 
+    }
+    \item {
+        We see that 
+        $$
+            f(x) =
+            \left\{
+                \begin{array}{ll}
+                    x^2 \quad -1 < x < 1 \\
+                    tan(x-1)+1 \quad 1 \le x < 1 + \frac{\pi}{2}
+                    
+                \end{array} \right.
+        $$
+        And observe that the domain is $(-1, 1 + \frac{\pi}{2})$ with a range of $[0, \infty)$. 
+    }
+    \item {
+        We see that between any $a,b \in \mathbb{Q}$, there exists $c \in \mathbb{I}$ such that $a< c < b$ due to the density the irrationals. 
+        For some $x, y \in A$, where $A$ is the open interval which the function is defined on.
+        And note that $[x,y] \subseteq A$.
+        Without lost of generality, assume $f(x) < f(y)$, we know there exists some $f(x) < L < f(y)$ where $L \in \mathbb{I}$. 
+        And because $f(x)$ is continous, thus by the mean value theorem, we know that there exists $c \in (x,y)$ such that $f(x) = L$. 
+        Consequently, the range is not equal to $\mathbb{Q}$. 
+    }
+\end{enumerate}
+
+\subsection*{Problem 6}
+\begin{enumerate}[a).]
+    \item {
+        \begin{proof}
+            We will let $g(x) \coloneq f(x) - f(x + \frac{1}{2})$. 
+            And we see that $g(x)$ is contnous on $[0,\frac{1}{2}]$ since it is the sum of two functions continous on $[0,\frac{1}{2}]$.
+            And observe that $g(0) = f(0) - f(\frac{1}{2})$ and $g(\frac{1}{2}) = f(\frac{1}{2}) - f(1) = -(f(0) - f(\frac{1}{2})) $. 
+            We may consider three cases: $f(\frac{1}{2}) = f(0)$, $f(\frac{1}{2}) > f(0)$, and $f(\frac{1}{2}) < f(0)$. 
+            If $f(0) = f(\frac{1}{2})$, we are done. However, if $f(0) < f(\frac{1}{2})$ or $f(0) > f(\frac{1}{2})$, we can exploit the mean value theorem. 
+            Without lost of generality, assume $f(0) > f(\frac{1}{2})$. 
+            We know that $g(0) > 0$ and $g(\frac{1}{2}) = - g(0) < 0$, thus $g(\frac{1}{2}) < 0 < g(0)$. 
+            We know that $g(x)$ is continuous on $[0,\frac{1}{2}]$, consequently, through the intermediate value theorem, we know there exists a $c \in (0,\frac{1}{2})$ such that $g(c) = 0$.
+            Which means $0 = f(c) - f(c+\frac{1}{2})$, and finally $f(c) = f(c+\frac{1}{2})$. Note $|c - (c+\frac{1}{2})| = \frac{1}{2}$.
+            
+        \end{proof}
+    }
+\end{enumerate}
+
+\vspace*{1cm}
+
+
+\section*{Section 5.2}
+\textit{Problems: 2, 6, 9}
+\subsection*{Problem 2}
+\begin{enumerate}[a).]
+    \item {
+        We let
+        $$ 
+                f(x) = \left\{ 
+                    \begin{array}{ll} 
+                        1 \quad   x \ge 0\\
+                        -1 \quad   x < 0\\
+                    \end{array} \right.
+        $$
+        $$ 
+                g(x) = |x|
+        $$
+        And observe that both not differentiable at $0$, and $f(x)g(x) = x$, which is differentiable at $0$. 
+    }
+    \item {
+        We let 
+        $$ 
+                f(x) = \left\{ 
+                    \begin{array}{ll} 
+                        1 \quad   x \ge 0\\
+                        -1 \quad   x < 0\\
+                    \end{array} \right.
+        $$
+        $$
+        g(x) = 0
+        $$
+        And observe that 
+        $$ 
+                f(x)g(x) = 0
+        $$
+        which is differentiable at $0$. 
+    }
+    \item {
+        False. 
+        We will use an infirect proof. 
+        Observe that $f(x) + g(x)$ and $g(x)$ are differentiable, thus we know that $(f(x) + g(x)) - g(x) = f(x)$ is differentiable. 
+        However, we know that $f(x)$ is not differentiable. 
+        Consequently, we have arrived at our contradiction. 
+    }
+    \item {
+        We let
+        $$ 
+                f(x) = \left\{ 
+                    \begin{array}{ll} 
+                        x^2 \quad   x \in \mathbb{Q}\\
+                        0 \quad   x \in \mathbb{I}\\
+                    \end{array} \right.
+        $$
+        Observe that the only continuous and differentiable point of the function is at $x = 0$. 
+    }
+\end{enumerate}
+
+
+\subsection*{Problem 6}
+\begin{enumerate}[a).]
+    \item {
+        We know that $g'(c) = \lim_{x \rightarrow c} \frac{g(x) - g(c)}{x - c}$, we let $h \coloneq x - c$, and observe that 
+        $$g'(c) = \lim_{x \rightarrow c} \frac{g(x) - g(c)}{x - c} = \lim_{h \rightarrow 0} \frac{g(c+h) - g(c)}{h}$$
+    }
+    \item {
+        Because $A$ is open, we know $c \in A$ cannot be one of the end points where the limit only exists from one-side. 
+        $$g'(c) = \frac{1}{2} \lim_{h \rightarrow 0} (\frac{g(c+h) - g(c)}{h}+\frac{g(c) - g(c-h)}{h})$$
+        It is easy to show that the second term is also an equivalent form of $g'(c)$ by using $\lim_{x\rightarrow c}\frac{g(c) - g(x)}{c-x}$ and $h \coloneq c-x$. 
+        And we have
+        $$g'(c) = \lim_{h \rightarrow 0} \frac{g(c+h) - g(c-h)}{2h}$$
+
+    }
+\end{enumerate}
+\subsection*{Problem 9}
+\begin{enumerate}[a).]
+    \item {
+        \begin{proof}
+        Because we know $f'(x)$ exists on an interval $I$ and is not constant, we know for some $a, b \in I$, f(x) differentiable on [a,b], and $f(a) \ne f(b)$. 
+        Without lost of generality, we let $f(b) > f(a)$, and because of the density of irrationals, we know between any two distinct real numbers(in this case $f(a)$ and $f(b)$), these exsits some $L \in \mathbb{I}$. 
+        And using Daboux's theorem, we know that if $f(x)$ is differentiable on $[a,b]$, and $f'(a) < L < f'(b)$, then these exist a $c \in [a,b]$ such that $f'(c) = L$.
+        Consequently, we have shown that $f'(x)$ must take on some irrational numbers. 
+        \end{proof}
+    }
+    \item {
+        False. 
+        The counter example is the modified version of $x^2\sin(\frac{1}{x})$, that is $f(x) = x^2\sin(\frac{1}{x}) + \frac{1}{8}$. 
+        Notice that at $x = 0$, $f'(0) = \frac{1}{8} > 0$. 
+        However, at all $x \ne 0$, we see that $f'(x) = -\cos(\frac{1}{x}) + 2x\sin(\frac{1}{x}) + \frac{1}{8}$. 
+        We define a sequence $(x_n) = \frac{1}{2\pi n}$ for $n \in \mathbb{N}$.
+        We see that for all $\delta > 0$, there exists $x_n \in V_{\delta}(0)$ since $(\frac{1}{2\pi n}) \rightarrow 0$, and we know that for all $x_n$, $f'(x_n) = -cos(2 \pi n) + 2(\frac{1}{2 \pi n})sin(2\pi n) + \frac{1}{8} = -1 + \frac{1}{8} = -\frac{7}{8}$
+        We see that for all $\delta$-neighborhood, $f'(x) < 0$ for some $x \in V_{\delta}(c)$. 
+    }
+\end{enumerate}
+
+
+\vspace*{1cm}
+
+
+\section*{Section 5.3}
+\textit{Problems: 2}
+\subsection*{Problem 2}
+\begin{proof}
+We will use an indirect proof. 
+We assume for contradiction that $f'(x) \ne 0$ on $A$, and it is not the case that $f(x)$ is one-to-one on $A$. 
+That is, we know there exist $a, b \in A$ such that $a \ne b$, but $f(x) = f(b)$. 
+With out lost of generality, we take interval $[a,b]$, because $a, b \in A$, we know $[a,b] \subseteq A$, and thus this implies that $f(x)$ differentiable on $[a,b]$, which means it is also continuous. 
+Using Rolle's Theorem, we know there exists a point $c \in (a,b)$ where $f'(c) = 0$ since $f(a) = f(b)$. 
+And $c \in (a,b)$ imples $c \in A$.
+Consequently, we have arrived at our contradiction because we assumed that $f'(x) \ne 0$ on $A$. 
+An example to show that the converse statement need not be true if $f(x) = x^3$.
+We see it is one-to-one on $\mathbb{R}$, but $f'(0) = 0$ and $0 \in \mathbb{R}$. 
+\end{proof}
+
+
+\end{document}
