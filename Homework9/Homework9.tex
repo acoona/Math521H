@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}			% Use this package to include images
+\usepackage{amsmath}			% A library of many standard math expressions
+\usepackage[margin=1in]{geometry}% Sets 1in margins. 
+\usepackage{fancyhdr}			% Creates headers and footers
+\usepackage{enumerate}          %These two package give custom labels to a list
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% Creates the header and footer. You can adjust the look and feel of these here.
+\pagestyle{fancy}
+\fancyhead[l]{Xiaoming Cao}
+\fancyhead[c]{MATH521H Homework\#9}
+\fancyhead[r]{\today}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt} %Creates a horizontal line underneath the header
+\setlength{\headheight}{15pt} %Sets enough space for the header
+
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{case}{Case}[]
+\newtheorem*{claim}{Claim}
+
+
+\setlength{\parindent}{0px}
+\begin{document} %The writing for your homework should all come after this. 
+
+\section*{Section 5.3}
+\textit{Problems: 3, 6a, 7}
+\subsection*{Problem 3}
+\begin{enumerate}[a).]
+    \item {
+        \begin{proof}
+            We set $g(x) \coloneq h(x) - x$, and observe that it is continous on $[0,3]$.
+            We see that $g(0) = 1$ and $g(3) = -1$. 
+            Thus based on the Intermediate Value Theorem, there exists $d \in [0,3]$, such that $g(d) = 0$, which means $h(d) - d = 0$, thus $h(d) = d$. 
+        \end{proof}
+    }
+    \item {
+        \begin{proof}
+            Because $h$ is a differentiable function on $[0,3]$, thus we can invoke the mean value theorem. 
+            That is, there exists $c \in (0,3)$ such that $h'(c) = \frac{h(3) - h(0)}{3 - 0} = \frac{2 - 1}{3-0} = \frac{1}{3} $. 
+            
+        \end{proof}
+    }
+    \item {
+        \begin{proof}
+            Similar to part b), using the mean value theorem, we see there exists $c \in (0,1)$ such that $f'(c) = \frac{f(1) - f(0)}{ 1-0} = 1$. 
+            We see $h$ is differentiable on $[1,3]$ and we see that $h(1) = 2 = h(3)$.
+            thus being fancy, we can utilise Rolle's theorem to show that there exists $d \in (1,3)$ such that $f'(d) = 0$. 
+            Finally, we see that $0,\frac{1}{4} < 1$, and using Darboux's theorem, we know that there exists $L \in (c,d)$ such that $h'(c) = \frac{1}{4}$ (reminder: $(c,d) \subseteq [0,3]$). 
+            
+        \end{proof}
+    }
+\end{enumerate}
+
+\subsection*{Problem 6}
+\begin{enumerate}[a).]
+    \item {
+        \begin{proof}
+            We know that for all $x \in [0,a]$, there exists $c \in (0,x)$ such that $g'(c) = \frac{g(x) - g(0)}{x-0} = \frac{g(x)}{x}$.
+            And we know that $|g'(c)| \le M$ for all $c \in [0,a]$, so $|\frac{g(x)}{x}| \le M$.
+            Because $x \in [0,a]$, we know that 
+            \begin{align*}
+                \left| \frac{g'(x)}{x} \right| &\le M \\
+                \implies \left| g'(x)\right| &\le Mx
+            \end{align*}
+            since $x> 0$.
+        \end{proof}
+    }
+\end{enumerate}
+
+\subsection*{Problem 7}
+\begin{proof}
+    We will use a indirect proof. 
+    Assume for contradiction that there exists more than one fixed points. 
+    That is, there exists $a, b$, which are elements of the interval such that $a \ne b$ and $f(a) = a$ and $f(b) = b$. 
+    We know that $f$ is differentiable on the interval $[a,b]$(Notice: this also implies continuity).
+    Thus we can invoke the Mean Value Theorem.
+    That is there exists $c \in (a,b)$ such that 
+    $$f'(c) = \frac{f(b) - f(a)}{b - a} = \frac{b - a}{ b - a} = 1$$
+    However, we know that $f'(x) \ne 0$.
+    Consequently, we have arrived at our contradiction.
+    
+\end{proof}
+
+
+\vspace*{1cm}
+
+
+\section*{Section 6.2}
+\textit{Problems: 2a, 8}
+\subsection*{Problem 2}
+\begin{enumerate}[a).]
+    \item {
+    }
+\end{enumerate}
+
+
+\subsection*{Problem 8}
+\end{document}
