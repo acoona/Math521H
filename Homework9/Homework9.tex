@@ -44,7 +44,6 @@
         \begin{proof}
             Because $h$ is a differentiable function on $[0,3]$, thus we can invoke the mean value theorem. 
             That is, there exists $c \in (0,3)$ such that $h'(c) = \frac{h(3) - h(0)}{3 - 0} = \frac{2 - 1}{3-0} = \frac{1}{3} $. 
-            
         \end{proof}
     }
     \item {
@@ -53,7 +52,6 @@
             We see $h$ is differentiable on $[1,3]$ and we see that $h(1) = 2 = h(3)$.
             thus being fancy, we can utilise Rolle's theorem to show that there exists $d \in (1,3)$ such that $f'(d) = 0$. 
             Finally, we see that $0,\frac{1}{4} < 1$, and using Darboux's theorem, we know that there exists $L \in (c,d)$ such that $h'(c) = \frac{1}{4}$ (reminder: $(c,d) \subseteq [0,3]$). 
-            
         \end{proof}
     }
 \end{enumerate}
@@ -85,7 +83,6 @@
     $$f'(c) = \frac{f(b) - f(a)}{b - a} = \frac{b - a}{ b - a} = 1$$
     However, we know that $f'(x) \ne 0$.
     Consequently, we have arrived at our contradiction.
-    
 \end{proof}
 
 
@@ -97,9 +94,43 @@
 \subsection*{Problem 2}
 \begin{enumerate}[a).]
     \item {
+        \begin{claim}
+            $f_n$ is continous at $0$. 
+        \end{claim}
+        \begin{proof}
+            Given $\epsilon > 0$, we let $\delta = \frac{1}{n}$. We see that $|x-0| = |x| < \frac{1}{n} \implies |fn(0) - f_n(x)| = |0 - 0| < \epsilon$. 
+            Notice that we have chosen x in such a way such that $|x| < \frac{1}{n} \implies -\frac{1}{n} < x < \frac{1}{n}$, thus $f_n(x)$ always equals 0. \\
+        \end{proof} 
+
+        \begin{claim}
+            $f$ is not continuous at 0.
+        \end{claim}
+        \begin{proof}
+            $f(x) = \lim_{n \rightarrow \infty}f_n(x)$. We let $(a_n) = \frac{1}{n}$ for $n \in \mathbb{N}$. 
+            We see that $(a_n) \rightarrow 0$, but $|f(0) - f(a_n)| = 1 > 0$.
+            Thus we se $f(x_n)$ does not converge to $f(0)$, and by the Criterion for Discontinuity, we may conclude that $f$ is not continuous at $c$. \\
+        \end{proof}
+
+        \begin{claim}
+            $f_n$ does not converge uniformly on $\mathbb{R}$. 
+        \end{claim}
+        \begin{proof}
+            We will use a indirect proof. 
+            Assume for contradiction that $f_n \rightarrow f$ uniformly. 
+            Let $(f_n)$ be a sequence of functions that converges to $f$. 
+            Using the contrapostive statement of the Continuous Limit Theorem, if $f$ is not conitnous at $0$, then there exists $f_n$ is not continous at $0$. 
+            However, we know that $f_n$ is continous at $0$ for all $n \in \mathbb{N}$. 
+            Thus we have arrived at our contradiction.
+        \end{proof}
     }
 \end{enumerate}
 
 
 \subsection*{Problem 8}
+\begin{proof}
+    
+    
+\end{proof}
+
+
 \end{document}
