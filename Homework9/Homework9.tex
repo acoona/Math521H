@@ -50,8 +50,8 @@
         \begin{proof}
             Similar to part b), using the mean value theorem, we see there exists $c \in (0,1)$ such that $f'(c) = \frac{f(1) - f(0)}{ 1-0} = 1$. 
             We see $h$ is differentiable on $[1,3]$ and we see that $h(1) = 2 = h(3)$.
-            thus being fancy, we can utilise Rolle's theorem to show that there exists $d \in (1,3)$ such that $f'(d) = 0$. 
-            Finally, we see that $0,\frac{1}{4} < 1$, and using Darboux's theorem, we know that there exists $L \in (c,d)$ such that $h'(c) = \frac{1}{4}$ (reminder: $(c,d) \subseteq [0,3]$). 
+            Thus being fancy, we can utilise Rolle's theorem to show that there exists $d \in (1,3)$ such that $f'(d) = 0$. 
+            Finally, we see that $0<\frac{1}{4} < 1$, and using Darboux's theorem, we know that there exists $L \in (c,d)$ such that $h'(L) = \frac{1}{4}$ (reminder: $(c,d) \subseteq [0,3]$). 
         \end{proof}
     }
 \end{enumerate}
@@ -81,7 +81,7 @@
     Thus we can invoke the Mean Value Theorem.
     That is there exists $c \in (a,b)$ such that 
     $$f'(c) = \frac{f(b) - f(a)}{b - a} = \frac{b - a}{ b - a} = 1$$
-    However, we know that $f'(x) \ne 0$.
+    However, we know that $f'(x) \ne 1$.
     Consequently, we have arrived at our contradiction.
 \end{proof}
 
@@ -98,7 +98,7 @@
             $f_n$ is continous at $0$. 
         \end{claim}
         \begin{proof}
-            Given $\epsilon > 0$, we let $\delta = \frac{1}{n}$. We see that $|x-0| = |x| < \frac{1}{n} \implies |fn(0) - f_n(x)| = |0 - 0| < \epsilon$. 
+            Given $\epsilon > 0$, we let $\delta = \frac{1}{n}$. We see that $|x-0| = |x| < \frac{1}{n} \implies |f_n(0) - f_n(x)| = |0 - 0| < \epsilon$. 
             Notice that we have chosen x in such a way such that $|x| < \frac{1}{n} \implies -\frac{1}{n} < x < \frac{1}{n}$, thus $f_n(x)$ always equals 0. \\
         \end{proof} 
 
@@ -118,7 +118,7 @@
             We will use a indirect proof. 
             Assume for contradiction that $f_n \rightarrow f$ uniformly. 
             Let $(f_n)$ be a sequence of functions that converges to $f$. 
-            Using the contrapostive statement of the Continuous Limit Theorem, if $f$ is not conitnous at $0$, then there exists $f_n$ is not continous at $0$. 
+            Using the contrapostive statement of the Continuous Limit Theorem, if $f$ is not continuous at $0$, then there exists $f_n$ is not continous at $0$. 
             However, we know that $f_n$ is continous at $0$ for all $n \in \mathbb{N}$. 
             Thus we have arrived at our contradiction.
         \end{proof}
@@ -128,6 +128,24 @@
 
 \subsection*{Problem 8}
 \begin{proof}
+    We see
+    $$\left| \frac{1}{g(x)} - \frac{1}{g_n(x)}\right| = \left| g_n(x) - g(x)\right| \left| \frac{1}{g(x)g_n(x)}\right| $$
+    We know that $K$ is a compact set and $g(x) \ne 0$, thus we know $|g(x)|$ has a minimum $M > 0$, that is $M \le |g(x)|$, so $\frac{1}{|g(x)|} \le M$. 
+    Now we will show $\frac{1}{|g_n(x)|}$ is bounded. 
+    We know for all $\epsilon > 0$, there exists $N \in \mathbb{N}$ such that $|g_n(x) - g(x)| < \epsilon$ whenever $n \ge N$ and $x \in K$. 
+    Thus, we choose some $\epsilon_1 < M$, and we know that 
+    \begin{align*}
+        |g(x) - g(x)_n|< \epsilon_1 \\
+        \implies |g(x)| < \epsilon_1 + |g_n(x)| \\
+        \implies |g_n(x)| > |g(x)| - \epsilon_1 \\
+        \implies |g_n(x)| >  M - \epsilon_1 \\
+        \implies \frac{1}{|g_n(x)|} < \frac{1}{M - \epsilon_1}\\
+    \end{align*}
+    let $P \coloneq \frac{1}{M(M - \epsilon_1)}$, we see that 
+    $$\frac{1}{|g(x)g_(x)|} < \frac{1}{M(M - \epsilon_1)} = P$$
+    Consequently, $\left| \frac{1}{g(x)} - \frac{1}{g_n(x)}\right| = \left| g(x) - g_n(x)\right| \left| \frac{1}{g(x)g_n(x)}\right| $.
+    And so for any $\epsilon > 0$, we can choose an $N \in \mathbb{N}$ such that $ n \ge N \implies |g(x) - g_n(x)| < \frac{\epsilon}{P} \implies \left| \frac{1}{g(x)} - \frac{1}{g_n(x)}\right| < \epsilon$, and we got our desired result.
+
     
     
 \end{proof}
