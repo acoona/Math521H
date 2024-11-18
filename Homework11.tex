@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}			% Use this package to include images
+\usepackage{amsmath}			% A library of many standard math expressions
+\usepackage[margin=1in]{geometry}% Sets 1in margins. 
+\usepackage{fancyhdr}			% Creates headers and footers
+\usepackage{enumerate}          %These two package give custom labels to a list
+\usepackage[shortlabels]{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+
+% Creates the header and footer. You can adjust the look and feel of these here.
+\pagestyle{fancy}
+\fancyhead[l]{Xiaoming Cao}
+\fancyhead[c]{MATH521H Homework\#11}
+\fancyhead[r]{\today}
+\fancyfoot[c]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt} %Creates a horizontal line underneath the header
+\setlength{\headheight}{15pt} %Sets enough space for the header
+
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{case}{Case}[]
+\newtheorem*{claim}{Claim}
+
+
+\setlength{\parindent}{0px}
+\begin{document} %The writing for your homework should all come after this. 
+
+\section*{Section 6.5}
+\textit{Problems: 1a, 6}
+
+\subsection*{Problem 3}
+\begin{enumerate}[a).]
+    \item {
+    }
+\end{enumerate}
+
+\subsection*{Problem 6}
+
+
+\vspace*{1cm}
+
+
+\section*{Section 6.6}
+\textit{Problems: 2a}
+
+\subsection*{Problem 2}
+\begin{enumerate}[a).]
+    \item {
+    }
+\end{enumerate}
+
+
+\vspace*{1cm}
+
+
+\section*{Section 7.2}
+\textit{Problems: 4}
+
+\subsection*{Problem 4}
+We know that there exists a partition $P$ with $L(g, P) = U(g,P)$. 
+$P$ can be expressed as ${x_0, x_1, \dots, x_n}$, and we see that 
+\begin{align*}
+&\sum_{k=1}^{n}m_k(x_k - x_{k-1}) = \sum_{k=1}^{n}M_k(x_k - x_{k-1}) \\
+\implies &\sum_{k=1}^{n}(M_k - m_k)(x_k - x_{k-1}) = 0\\
+\end{align*}
+We know that $x_{k} - x_{k-1} \ne 0$, thus $M_k = m_k$.
+This indicates that $\sup \{g(x): x \in [x_{k-1}, x_{k}]\}$ = $\inf \{g(x): x \in [x_{k-1}, x_{k}]\}$. 
+We can easily see that $f(x)$ is a constant over the interval $[x_{k-1}, x_k]$ (A rather simple proof using contradiciton), and $g(x_{k-1}) = g(x_k)$.
+And thus we see $g(x_0) = g(x_1) = \dots = g(x_n)$ (via induction), and so we know that $g(x)$ is constant over the entire interval [a,b]. 
+This means it is integrable (constant implies continuity implies integrability). 
+And the value of $\int_{a}^{b}g = (b-a)g(c)$ for any $c \in [a,b]$. 
+
+
+
+
+
+
+\end{document}
