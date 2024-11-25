@@ -38,19 +38,38 @@
         We see that $g(x) = \sum_{n = 1}^{\infty}(-1)^{n-1}\frac{x^n}{n}$, and thus $|g(x)| = \sum_{n=1}^{\infty}\frac{x^n}{n}$. 
         We know that the geometric series $\sum_{n=1}^{\infty}x^n$ converges for all $x \in (-1,1)$. 
         Because $0 \le |g(x)| \le \sum_{n=1}^{\infty}x^n$, we know that $g(x)$ converges absolutely.
-        And due to the Absolute Conergence Test, we know that $\sum_{n=1}^{\infty}g(x)$ converges for all $x \in (-1,1)$
+        And due to the Absolute Convergence Test, we know that $\sum_{n=1}^{\infty}g(x)$ converges for all $x \in (-1,1)$
         Consequently, we see that $g(x)$ is defined for all $x \in (-1,1)$. 
-        For when $x = 1$, we see that $g(1) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots$ is the alternating harmonic series, and we know that converges (simpily check that it fits the criteria for the Alternating Series Test). 
-        And so from Abel's Test, we know that it thus converges uniformly on $[0,1]$. and also converges absolutely for any $x$ such that $|x|<1$, which implies it uniformly for $x \in (-1,1)$. 
-        And using the Term-by-Term Continuity Theorem (we know that each partial sum is continous because it is a polynomial), we can say that $f$ is continous on $(-1,1]$. 
+        For when $x = 1$, we see that $g(1) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots$ is the alternating harmonic series, and we know that converges (simply check that it fits the criteria for the Alternating Series Test). 
+        And so from Abel's Test, we know that it thus converges uniformly on $[0,1]$. and also converges absolutely for any $x$ such that $|x|<1$, which implies it converges uniformly for any compact subset of $(-1,1)$. 
+        And using the Term-by-Term Continuity Theorem (we know that each partial sum is continous because it is a polynomial), we can say that $f$ is continous on $(-1,1]$ as uniform convergence is present. 
         Notice, this also implies that $g$ is continous on $(-1,1)$. 
-        On $[-1,1]$, $g(x)$ is not even defined, because we see that $g(-1) = 1 + \frac{1}{2} + \frac{1}{3} + \dots$ is the harmoic series, whcih we know diverges. 
-        And we also know that it is not possible for $g(x)$ to converg for any other points $|x|>1$. 
-        As if we assume such point exists, then we know $|-1| < x$, and so $g(-1)$ converges, and we know that to be a contradiction, and we know that to be a contradiction. 
+        On $[-1,1]$, $g(x)$ is not even defined, because we see that $g(-1) = 1 + \frac{1}{2} + \frac{1}{3} + \dots$ is the harmonic series, which we know diverges. 
+        And we also know that it is not possible for $g(x)$ to converge for any other points $|x|>1$. 
+        As if we assume such point exists, then we know $|-1| < |x|$, and so $g(-1)$ converges, and we know that to be a contradiction.
     }
 \end{enumerate}
 
 \subsection*{Problem 6}
+Because it is a power series, we know the differentiated series converges uniformly on compact sets in $(-1,1)$. 
+And utilising the Term-by-term Differentiability Theorem, we know that 
+$$\frac{1}{(1-x)^2} = \sum_{n=0}^{\infty}(x^n)' = \sum_{n=1}^{\infty}nx^{n-1}$$
+Take $x = \frac{1}{2}$, we have
+\begin{align*}
+    &\frac{1}{(1-\frac{1}{2})^2} = \sum_{n=1}^{\infty}n\left(\frac{1}{2}\right)^{n-1} \\
+    \implies &\frac{1}{2(1-\frac{1}{2})^2} = \sum_{n=1}^{\infty}\frac{n}{2^{n}} \\
+    \implies &\sum_{n=1}^{\infty}\frac{n}{2^{n}} = 2 \\
+\end{align*}
+For $\sum_{n=1}^{\infty}\frac{n^2}{2^n}$, we will leverage a similar process.
+Because it is yet another power series, we could differentiate both side and obtain
+$$\frac{2}{(1-x)^3} = \sum_{n=1}^{\infty}n(n-1)x^{n-2} = \sum_{n=1}^{\infty}\left( n^2x^{n-2} - nx^{n-2}\right)$$
+We may set $x = \frac{1}{2}$, and get
+
+\begin{align*}
+    &\frac{2}{\left( 1 - \frac{1}{2}\right)^3} = \sum_{n= 1}^{\infty}\frac{n^2}{2^{n-2}} - 4\sum_{n=1}^{\infty}\frac{n}{2^{n}}\\
+    \implies &\sum_{n=1}^{\infty}\frac{n^2}{2^{n-2}} = 4 \frac{n = 1}{\infty}\frac{n}{2^n} + \frac{2}{\left( \frac{1}{2}\right)^3} = 4(2) + 16 = 24 \\
+    \implies & \sum_{n = 1}^{\infty} \frac{n^2}{2^n} = 6
+\end{align*}
 
 
 \vspace*{1cm}
@@ -62,6 +81,17 @@
 \subsection*{Problem 2}
 \begin{enumerate}[a).]
     \item {
+        From the section, we know that 
+        $$\sin(x) = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}$$
+        And it converges for all intervals of the form $[-R, R]$. 
+        Thus, it is valid for all $x \in \mathbb{R}$. 
+        We can differentiate both sides and get
+        $$\cos(x) = \sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{2n!}$$
+        With simply manipulations, we see
+        \begin{align*}
+            &\cos(x^2) = \sum_{n=0}^{\infty}(-1)^n\frac{x^{4n}}{2n!} \\
+            \implies & x\cos(x^2) = \sum_{n=0}^{\infty}(-1)^n\frac{x^{4n+1}}{2n!}
+        \end{align*}
     }
 \end{enumerate}
 
@@ -81,7 +111,7 @@ $P$ can be expressed as ${x_0, x_1, \dots, x_n}$, and we see that
 \end{align*}
 We know that $x_{k} - x_{k-1} \ne 0$, thus $M_k = m_k$.
 This indicates that $\sup \{g(x): x \in [x_{k-1}, x_{k}]\}$ = $\inf \{g(x): x \in [x_{k-1}, x_{k}]\}$. 
-We can easily see that $f(x)$ is a constant over the interval $[x_{k-1}, x_k]$ (A rather simple proof using contradiciton), and $g(x_{k-1}) = g(x_k)$.
+We can easily see that $f(x)$ is a constant over the interval $[x_{k-1}, x_k]$ (A rather simple proof using contradiction), and $g(x_{k-1}) = g(x_k)$.
 And thus we see $g(x_0) = g(x_1) = \dots = g(x_n)$ (via induction), and so we know that $g(x)$ is constant over the entire interval [a,b]. 
 This means it is integrable (constant implies continuity implies integrability). 
 And the value of $\int_{a}^{b}g = (b-a)g(c)$ for any $c \in [a,b]$. 
